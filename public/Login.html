@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up/Login</title>
+    <link rel="stylesheet" href="Login.css">
+    <!-- Ensure you have the correct path for CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-box" id="loginForm">
+            <h1>Login</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" id="loginUsername" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="loginPassword" required>
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="button" onclick="login()">Login</button>
+                </div>
+                <p>Don't have an account? <button type="button" onclick="toggleForms()">Sign up here!</button></p>
+            </form>
+        </div>
+        <!-- Signup Form -->
+        <div class="form-box" id="signupForm" style="display: none;">
+            <h1>Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" id="signupUsername" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="signupPassword" required>
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="button" onclick="signup()">Sign Up</button>
+                </div>
+                <p>Already have an account? <button type="button" onclick="toggleForms()">Login here!</button></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            }
+        }
+
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            // Implement fetch call to your login endpoint
+            // On success, redirect to the main page
+        }
+
+        function signup() {
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            // Implement fetch call to your signup endpoint
+            // On success, redirect to the main page
+        }
+    </script>
+    <script src="login-signup.js"></script>
+</body>
+</html>
